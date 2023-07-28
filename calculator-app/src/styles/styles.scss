@@ -1,0 +1,264 @@
+
+//This is responsive to every screen that I tested, it seems to work fine as far as responsiveness, but that is why you might seem some random media queries
+
+.history {
+    color: white;
+    opacity: 0.8;
+    position: absolute;
+    right: 20%;
+    top: 10%;
+}
+
+@mixin wrapperStyles {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	
+}
+
+@mixin buttonStyles {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #e4e4e4;
+	cursor: pointer;
+	transition: background-color 0.2s;
+
+	&.light-grey {
+		background-color: #d4d4d2;
+
+		&:hover {
+			opacity: 0.8;
+			transition: all 0.2s ease;
+		}
+	}
+
+	&.orange {
+		background-color: #ff9500;
+		color: #fff;
+
+		&:hover {
+			opacity: 0.8;
+			transition: all 0.2s ease;
+		}
+	}
+
+	&.number {
+		background-color: #505050;
+		color: white;
+		&:hover {
+			opacity: 0.8;
+			transition: all 0.2s ease;
+		}
+	}
+
+	&.zero {
+		background-color: #505050;
+		color: white;
+		grid-column: span 2;
+	}
+}
+
+@mixin screenStyles {
+	background-color: transparent;
+	grid-column: span 4;
+	color: white;
+	text-align: right;
+	overflow-y: auto;
+	border-radius: 10px;
+
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #d4d4d2;
+		border-radius: 5px;
+	}
+}
+
+@media (min-aspect-ratio: 0/1) and (max-aspect-ratio: 10/16) {
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		height: 100%;
+	}
+
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+        background-color: #1c1c1c;
+        background: cover;
+	}
+
+	.wrapper {
+		@include wrapperStyles();
+		gap: 15px;
+		padding: 100px;
+		max-width: 100vw;
+		width: 100%;
+		margin-bottom: calc(100% - 20vh);
+
+		.button {
+			@include buttonStyles();
+			font-size: 2em;
+			min-width: 20vw;
+			min-height: 20vw;
+			border-radius: 50%;
+			border: none;
+
+            @media (max-width: 300px) {
+				font-size: 1.5em;
+			}
+
+			&.zero {
+				width: 40vw;
+				border-radius: 40px;
+			}
+		}
+
+		.screen {
+			@include screenStyles();
+			height: 16vh;
+			padding: 10px;
+			margin-top: 35vh;
+			margin-bottom: 6vh;
+			font-size: 10vh;
+			@media (max-width: 300px) {
+				font-size: 3em;
+			}
+		}
+	}
+}
+
+@media (min-aspect-ratio: 10/16) and (max-aspect-ratio: 13/9) {
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		height: 100%;
+	}
+
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+        background-color: #1c1c1c;
+        background: cover;
+	}
+
+	.wrapper {
+		@include wrapperStyles();
+		gap: 20px;
+		padding: 100px;
+		max-width: 100vw;
+		width: 100%;
+		margin-bottom: calc(100% - 20vh);
+
+		.button {
+			@include buttonStyles();
+			font-size: 5vh;
+			min-width: 17vw;
+			min-height: 17vw;
+			padding: 0px;
+			border-radius: 50%;
+			border: none;
+
+			&.zero {
+				width: 40vw;
+				border-radius: 250px;
+			}
+		}
+
+		.screen {
+			@include screenStyles();
+			// height: 15vh;
+			padding: 10vh 1vh 0px;
+			margin-top: 45vh;
+			margin-bottom: 5vh;
+			font-size: 10vh;
+		}
+	}
+}
+
+@media (min-aspect-ratio: 13/9) {
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		height: 100%;
+	}
+
+    .container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+        background-color: #1c1c1c;
+        background: cover;
+	}
+
+	.wrapper {
+		@include wrapperStyles();
+		gap: 3vh;
+		padding: 5vh;
+		max-width: 100vw;
+        @media (min-width: 1000px) and (max-width: 1300px){
+            padding: 10vh;
+        }
+
+		.button {
+			@include buttonStyles();
+			font-size: 2em;
+			max-width: 20vw;
+			min-height: 5vw;
+			max-height: 10vw;
+			border-radius: 300px;
+			border: none;
+
+            @media (min-width: 2200px) and (max-width: 2700px) {
+                font-size: 3em;
+			}
+
+            @media (min-width: 2700px) and (max-width: 4000px) {
+                font-size: 5em;
+			}
+            
+
+			&.zero {
+				width: 40vw;
+				border-radius: 300px;
+				min-width: 43vw;
+				max-width: 50vw;
+			}
+		}
+
+		.screen {
+			@include screenStyles();
+			margin-right: 8vh;
+			height: 15vh;
+			// padding: 10px;
+			// margin-top: 30vh;
+			font-size: 4em;
+
+            @media (min-width: 1000px) and (max-width: 1300px){
+                margin-top: -10px;
+			}
+
+            @media (min-width: 2200px) and (max-width: 2700px) {
+                
+                font-size: 5em;
+			}
+
+            @media (min-width: 2700px) and (max-width: 4000px) {
+                font-size: 10em;
+			}
+		}
+	}
+}

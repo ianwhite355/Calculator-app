@@ -1,0 +1,326 @@
+.history {
+  color: white;
+  opacity: 0.8;
+  position: absolute;
+  right: 20%;
+  top: 10%;
+}
+
+@media (min-aspect-ratio: 0/1) and (max-aspect-ratio: 10/16) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c1c1c;
+    background: cover;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 100px;
+    max-width: 100vw;
+    width: 100%;
+    margin-bottom: calc(100% - 20vh);
+  }
+  .wrapper .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4e4e4;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 2em;
+    min-width: 20vw;
+    min-height: 20vw;
+    border-radius: 50%;
+    border: none;
+  }
+  .wrapper .button.light-grey {
+    background-color: #d4d4d2;
+  }
+  .wrapper .button.light-grey:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.orange {
+    background-color: #ff9500;
+    color: #fff;
+  }
+  .wrapper .button.orange:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.number {
+    background-color: #505050;
+    color: white;
+  }
+  .wrapper .button.number:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.zero {
+    background-color: #505050;
+    color: white;
+    grid-column: span 2;
+  }
+}
+@media (min-aspect-ratio: 0/1) and (max-aspect-ratio: 10/16) and (max-width: 300px) {
+  .wrapper .button {
+    font-size: 1.5em;
+  }
+}
+@media (min-aspect-ratio: 0/1) and (max-aspect-ratio: 10/16) {
+  .wrapper .button.zero {
+    width: 40vw;
+    border-radius: 40px;
+  }
+  .wrapper .screen {
+    background-color: transparent;
+    grid-column: span 4;
+    color: white;
+    text-align: right;
+    overflow-y: auto;
+    border-radius: 10px;
+    height: 16vh;
+    padding: 10px;
+    margin-top: 35vh;
+    margin-bottom: 6vh;
+    font-size: 10vh;
+  }
+  .wrapper .screen::-webkit-scrollbar {
+    width: 5px;
+  }
+  .wrapper .screen::-webkit-scrollbar-thumb {
+    background-color: #d4d4d2;
+    border-radius: 5px;
+  }
+}
+@media (min-aspect-ratio: 0/1) and (max-aspect-ratio: 10/16) and (max-width: 300px) {
+  .wrapper .screen {
+    font-size: 3em;
+  }
+}
+@media (min-aspect-ratio: 10/16) and (max-aspect-ratio: 13/9) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c1c1c;
+    background: cover;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 100px;
+    max-width: 100vw;
+    width: 100%;
+    margin-bottom: calc(100% - 20vh);
+  }
+  .wrapper .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4e4e4;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 5vh;
+    min-width: 17vw;
+    min-height: 17vw;
+    padding: 0px;
+    border-radius: 50%;
+    border: none;
+  }
+  .wrapper .button.light-grey {
+    background-color: #d4d4d2;
+  }
+  .wrapper .button.light-grey:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.orange {
+    background-color: #ff9500;
+    color: #fff;
+  }
+  .wrapper .button.orange:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.number {
+    background-color: #505050;
+    color: white;
+  }
+  .wrapper .button.number:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.zero {
+    background-color: #505050;
+    color: white;
+    grid-column: span 2;
+  }
+  .wrapper .button.zero {
+    width: 40vw;
+    border-radius: 250px;
+  }
+  .wrapper .screen {
+    background-color: transparent;
+    grid-column: span 4;
+    color: white;
+    text-align: right;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 10vh 1vh 0px;
+    margin-top: 45vh;
+    margin-bottom: 5vh;
+    font-size: 10vh;
+  }
+  .wrapper .screen::-webkit-scrollbar {
+    width: 5px;
+  }
+  .wrapper .screen::-webkit-scrollbar-thumb {
+    background-color: #d4d4d2;
+    border-radius: 5px;
+  }
+}
+@media (min-aspect-ratio: 13/9) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c1c1c;
+    background: cover;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3vh;
+    padding: 5vh;
+    max-width: 100vw;
+  }
+}
+@media (min-aspect-ratio: 13/9) and (min-width: 1000px) and (max-width: 1300px) {
+  .wrapper {
+    padding: 10vh;
+  }
+}
+@media (min-aspect-ratio: 13/9) {
+  .wrapper .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4e4e4;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 2em;
+    max-width: 20vw;
+    min-height: 5vw;
+    max-height: 10vw;
+    border-radius: 300px;
+    border: none;
+  }
+  .wrapper .button.light-grey {
+    background-color: #d4d4d2;
+  }
+  .wrapper .button.light-grey:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.orange {
+    background-color: #ff9500;
+    color: #fff;
+  }
+  .wrapper .button.orange:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.number {
+    background-color: #505050;
+    color: white;
+  }
+  .wrapper .button.number:hover {
+    opacity: 0.8;
+    transition: all 0.2s ease;
+  }
+  .wrapper .button.zero {
+    background-color: #505050;
+    color: white;
+    grid-column: span 2;
+  }
+}
+@media (min-aspect-ratio: 13/9) and (min-width: 2200px) and (max-width: 2700px) {
+  .wrapper .button {
+    font-size: 3em;
+  }
+}
+@media (min-aspect-ratio: 13/9) and (min-width: 2700px) and (max-width: 4000px) {
+  .wrapper .button {
+    font-size: 5em;
+  }
+}
+@media (min-aspect-ratio: 13/9) {
+  .wrapper .button.zero {
+    width: 40vw;
+    border-radius: 300px;
+    min-width: 43vw;
+    max-width: 50vw;
+  }
+  .wrapper .screen {
+    background-color: transparent;
+    grid-column: span 4;
+    color: white;
+    text-align: right;
+    overflow-y: auto;
+    border-radius: 10px;
+    margin-right: 8vh;
+    height: 15vh;
+    font-size: 4em;
+  }
+  .wrapper .screen::-webkit-scrollbar {
+    width: 5px;
+  }
+  .wrapper .screen::-webkit-scrollbar-thumb {
+    background-color: #d4d4d2;
+    border-radius: 5px;
+  }
+}
+@media (min-aspect-ratio: 13/9) and (min-width: 1000px) and (max-width: 1300px) {
+  .wrapper .screen {
+    margin-top: -10px;
+  }
+}
+@media (min-aspect-ratio: 13/9) and (min-width: 2200px) and (max-width: 2700px) {
+  .wrapper .screen {
+    font-size: 5em;
+  }
+}
+@media (min-aspect-ratio: 13/9) and (min-width: 2700px) and (max-width: 4000px) {
+  .wrapper .screen {
+    font-size: 10em;
+  }
+}/*# sourceMappingURL=styles.css.map */
