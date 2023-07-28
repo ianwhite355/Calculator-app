@@ -1,46 +1,33 @@
-
-
-
 //The following is all the colors used besides white
 
-$lightGrey:#d4d4d2;
-$darkGrey:#505050;
+$lightGrey: #d4d4d2;
+$darkGrey: #505050;
 $offBlack: #1c1c1c;
 $orange: #ff9500;
 //The following is all universal stuff
 
 body,
-	html {
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		height: 100%;
-	}
-
-.history {
-    color: white;
-    opacity: 0.8;
-    position: absolute;
-    right: 50px;
-    top: 10px;
-    font-size: 2em;
+html {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	height: 100%;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: $offBlack;
-    background: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: $offBlack;
+	background: cover;
 }
 
-//The following is all the styles using mixin
+//The following is all the repeated styles, so just used mixin instead so call them
 
 @mixin wrapperStyles {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	
 }
 
 @mixin buttonStyles {
@@ -49,6 +36,7 @@ body,
 	align-items: center;
 	cursor: pointer;
 	transition: background-color 0.2s;
+    border: none;
 
 	&.light-grey {
 		background-color: $lightGrey;
@@ -92,22 +80,23 @@ body,
 	text-align: right;
 	overflow-y: auto;
 	border-radius: 10px;
+    overflow: hidden;
+	display: flex;
+	flex-direction: column;
 
 	&::-webkit-scrollbar {
 		width: 5px;
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color:  $lightGrey;
+		background-color: $lightGrey;
 		border-radius: 5px;
 	}
 }
 
-
 //The following is just to make it as responsive as possible, no other styling is here just that
 
-@media (min-aspect-ratio: 0/1) and (max-aspect-ratio: 10/16) {
-
+@media (min-aspect-ratio: 0/1) and (max-aspect-ratio: 18/32) {
 	.wrapper {
 		@include wrapperStyles();
 		gap: 15px;
@@ -122,40 +111,47 @@ body,
 			min-width: 20vw;
 			min-height: 20vw;
 			border-radius: 50%;
-			border: none;
 
-            @media (max-width: 300px) {
+			@media (max-width: 300px) {
 				font-size: 1.5em;
 			}
 
 			&.zero {
-				width: 40vw;
+				width: 43vw;
 				border-radius: 40px;
 			}
 		}
 
-		.screen {
+		.info {
 			@include screenStyles();
-			height: 16vh;
-			padding: 10px;
-			margin-top: 35vh;
-			margin-bottom: 6vh;
-			font-size: 10vh;
+			height: 20vh;
+			padding: 5px;
+			margin-top: 25vh;
+			margin-bottom: 2vh;
+		}
+
+		.screen {
+            min-height: 20vh;
+			margin: 0px;
+			font-size: 8vh;
 			@media (max-width: 300px) {
 				font-size: 3em;
 			}
 		}
+
+		.history {
+			color: $lightGrey;
+			font-size: 3vh;
+		}
 	}
 }
 
-@media (min-aspect-ratio: 10/16) and (max-aspect-ratio: 31/36) {
-
+@media (min-aspect-ratio: 18/32) and (max-aspect-ratio: 31/40) {
 	.wrapper {
 		@include wrapperStyles();
 		gap: 20px;
 		padding: 100px;
 		max-width: 100vw;
-		// width: 100%;
 		margin-bottom: calc(100% - 20vh);
 
 		.button {
@@ -165,7 +161,6 @@ body,
 			min-height: 17vw;
 			padding: 0px;
 			border-radius: 50%;
-			border: none;
 
 			&.zero {
 				width: 40vw;
@@ -173,26 +168,110 @@ body,
 			}
 		}
 
-		.screen {
+        .info {
 			@include screenStyles();
-			padding: 10vh 1vh 0px;
-			margin-top: 45vh;
-			margin-bottom: 5vh;
-			font-size: 10vh;
+			height: 20vh;
+			padding: 5px;
+			margin-top: 49vh;
+			margin-bottom: 0vh;
+		}
+
+		.screen {
+            min-height: 20vh;
+			margin: 0px;
+			font-size: 8vh;
+			@media (max-width: 300px) {
+				font-size: 3em;
+			}
+		}
+
+		.history {
+			color: $lightGrey;
+			padding-top: 0px;
+			font-size: 3vh;
 		}
 	}
 }
 
-@media (min-aspect-ratio: 31/36) {
 
+@media (min-aspect-ratio: 31/40) and (max-aspect-ratio: 13/11) {
 	.wrapper {
 		@include wrapperStyles();
 		gap: 3vh;
 		padding: 5vh;
 		max-width: 100vw;
-        @media (min-width: 1000px) and (max-width: 1300px){
-            padding: 10vh;
-        }
+		@media (min-width: 1000px) and (max-width: 1300px) {
+			padding: 10vh;
+		}
+
+		.button {
+			@include buttonStyles();
+			font-size: 2em;
+			max-width: 20vw;
+			height: 10vw;
+			border-radius: 300px;
+
+			@media (min-width: 2200px) and (max-width: 2700px) {
+				font-size: 3em;
+			}
+
+			@media (min-width: 2700px) {
+				font-size: 5em;
+			}
+
+			&.zero {
+				border-radius: 300px;
+				min-width: 40vw;
+				max-width: 50vw;
+			}
+		}
+
+
+        .info {
+			@include screenStyles();
+			height: 20vh;
+			padding: 5px;
+			margin-top: 0vh;
+			margin-bottom: 2vh;
+		}
+
+		.screen {
+            min-height: 20vh;
+			margin: 0px;
+			font-size: 4em;
+			@media (min-width: 1000px) and (max-width: 1300px) {
+				margin-top: -10px;
+			}
+
+			@media (min-width: 2200px) and (max-width: 2700px) {
+				font-size: 5em;
+			}
+
+			@media (min-width: 2700px) {
+				font-size: 10em;
+			}
+		}
+
+		.history {
+			color: $lightGrey;
+			padding-top: 0px;
+			font-size: 3vh;
+		}
+        
+	}
+}
+
+
+
+@media (min-aspect-ratio: 13/11) {
+	.wrapper {
+		@include wrapperStyles();
+		gap: 3vh;
+		padding: 5vh;
+		max-width: 100vw;
+		@media (min-width: 1000px) and (max-width: 1300px) {
+			padding: 10vh;
+		}
 
 		.button {
 			@include buttonStyles();
@@ -201,43 +280,53 @@ body,
 			min-height: 5vw;
 			max-height: 10vw;
 			border-radius: 300px;
-			border: none;
 
-            @media (min-width: 2200px) and (max-width: 2700px) {
-                font-size: 3em;
+			@media (min-width: 2200px) and (max-width: 2700px) {
+				font-size: 3em;
 			}
 
-            @media (min-width: 2700px) {
-                font-size: 5em;
+			@media (min-width: 2700px) {
+				font-size: 5em;
 			}
-            
 
 			&.zero {
-				
 				border-radius: 300px;
 				min-width: 40vw;
 				max-width: 50vw;
 			}
 		}
 
-		.screen {
+
+        .info {
 			@include screenStyles();
-			margin-right: 8vh;
-			height: 15vh;
+			height: 20vh;
+			padding: 5px;
+			margin-top: 0vh;
+			margin-bottom: 2vh;
+		}
+
+		.screen {
+            min-height: 20vh;
+			margin: 0px;
 			font-size: 4em;
-
-            @media (min-width: 1000px) and (max-width: 1300px){
-                margin-top: -10px;
+			@media (min-width: 1000px) and (max-width: 1300px) {
+				margin-top: -10px;
 			}
 
-            @media (min-width: 2200px) and (max-width: 2700px) {
-                
-                font-size: 5em;
+			@media (min-width: 2200px) and (max-width: 2700px) {
+				font-size: 5em;
 			}
 
-            @media (min-width: 2700px){
-                font-size: 10em;
+			@media (min-width: 2700px) {
+				font-size: 10em;
 			}
 		}
+
+		.history {
+			color: $lightGrey;
+			padding-top: 0px;
+			font-size: 3vh;
+		}
+        
 	}
 }

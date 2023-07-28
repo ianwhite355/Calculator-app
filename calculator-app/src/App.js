@@ -4,20 +4,19 @@ import "./styles/styles.css";
 const App = () => {
 	const [previousState, setPreviousState] = useState(0);
 	const [currentState, setCurrentState] = useState("");
-    const [displayedState, setDisplayedState] = useState("")
-	const [history, setHistory] = useState("");
-	const [darkMode, setDarkMode] = useState(false);
+	const [displayedState, setDisplayedState] = useState("");
+	const [history, setHistory] = useState("hidden");
 
 	const handleClear = () => {
 		setPreviousState(0);
 		setCurrentState("");
-        setDisplayedState("")
+		setDisplayedState("");
 	};
 
 	const handlePlusMinus = () => {
 		if (previousState === 0) {
 			setCurrentState(currentState + "-");
-            setDisplayedState(currentState + "-")
+			setDisplayedState(currentState + "-");
 		} else if (previousState < 0) {
 			const minusOrPlus = Math.abs(previousState);
 			setPreviousState(minusOrPlus);
@@ -38,23 +37,19 @@ const App = () => {
 	const handleOperator = (operator) => {
 		if (previousState === 0) return;
 
-		// if (history) {
-		// 	setHistory(displayedState);
-		// }
-
-        if (operator === "/") {
-            setDisplayedState(currentState + previousState + "÷");
-        } else if (operator === "*") {
-            setDisplayedState(currentState + previousState + " " + "x" + " ");
-        } else {
-            setDisplayedState(currentState  + previousState + operator)
-        }
+		if (operator === "/") {
+			setDisplayedState(currentState + previousState + "÷");
+		} else if (operator === "*") {
+			setDisplayedState(currentState + previousState + " " + "x" + " ");
+		} else {
+			setDisplayedState(currentState + previousState + operator);
+		}
 
 		setCurrentState(currentState + previousState + operator);
 		setPreviousState(0);
 	};
 
-    console.log(displayedState)
+	console.log(displayedState);
 
 	const handleNumber = (number) => {
 		const newState = parseFloat(previousState.toString() + number);
@@ -79,14 +74,14 @@ const App = () => {
 		setCurrentState("");
 	};
 
-	console.log(history);
-
 	return (
 		<div className="container">
 			<div className="wrapper">
-				<p className="history">{history}</p>
-				<p className="screen">{currentState ? displayedState + (previousState === 0 ? "" : previousState) : previousState}</p>
-
+				<div className="info">
+                    {/* This history part is so the boxes stay in the same spot, without it the column messes up and the screen moves when slightly on =*/}
+					{history === "hidden" ? <p  className="history" style={{ color: "transparent" }}>hidden</p> : <p className="history">{history}</p>}
+					<p className="screen">{currentState ? displayedState + (previousState === 0 ? "" : previousState) : previousState}</p>
+				</div>
 				<div className="button light-grey" onClick={handleClear}>
 					AC
 				</div>
