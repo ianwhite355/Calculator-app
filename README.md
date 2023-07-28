@@ -7,6 +7,6 @@ The Calculator App is a user-friendly tool designed to perform basic arithmetic 
 
 If I had more time, I would consider implementing the following features and improvements:
 
--Unit test
--Themes, Dark and light mode
--Complete history functionality
+- Unit test
+- Themes (Dark and light mode)
+- Complete history functionality
