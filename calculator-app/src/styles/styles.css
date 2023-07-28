@@ -1,27 +1,30 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
 .history {
   color: white;
   opacity: 0.8;
   position: absolute;
-  right: 20%;
-  top: 10%;
+  right: 50px;
+  top: 10px;
+  font-size: 2em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1c1c1c;
+  background: cover;
 }
 
 @media (min-aspect-ratio: 0/1) and (max-aspect-ratio: 10/16) {
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1c1c1c;
-    background: cover;
-  }
   .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -45,7 +48,7 @@
     border: none;
   }
   .wrapper .button.light-grey {
-    background-color: #d4d4d2;
+    background-color: lightgrey;
   }
   .wrapper .button.light-grey:hover {
     opacity: 0.8;
@@ -110,21 +113,6 @@
   }
 }
 @media (min-aspect-ratio: 10/16) and (max-aspect-ratio: 13/9) {
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1c1c1c;
-    background: cover;
-  }
   .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -149,7 +137,7 @@
     border: none;
   }
   .wrapper .button.light-grey {
-    background-color: #d4d4d2;
+    background-color: lightgrey;
   }
   .wrapper .button.light-grey:hover {
     opacity: 0.8;
@@ -201,21 +189,6 @@
   }
 }
 @media (min-aspect-ratio: 13/9) {
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1c1c1c;
-    background: cover;
-  }
   .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -245,7 +218,7 @@
     border: none;
   }
   .wrapper .button.light-grey {
-    background-color: #d4d4d2;
+    background-color: lightgrey;
   }
   .wrapper .button.light-grey:hover {
     opacity: 0.8;
@@ -285,9 +258,8 @@
 }
 @media (min-aspect-ratio: 13/9) {
   .wrapper .button.zero {
-    width: 40vw;
     border-radius: 300px;
-    min-width: 43vw;
+    min-width: 40vw;
     max-width: 50vw;
   }
   .wrapper .screen {
